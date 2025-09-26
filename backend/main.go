@@ -9,7 +9,7 @@ import (
 	"anti-fake-system/routes"   // 导入路由设置包
 
 	"github.com/joho/godotenv" // 导入godotenv包，用于加载.env文件
-
+)
 
 // main 函数是Go应用程序的入口点。
 // 它负责初始化配置、数据库、Redis、设置路由并启动HTTP服务器。
