@@ -18,7 +18,7 @@
 ```json
 {
     "name": "防伪系统服务器",
-    "host": "8.138.244.31",
+    "host": "your_host",
     "protocol": "sftp",
     "port": 22,
     "username": "your_username",
@@ -51,7 +51,7 @@
 ```json
 {
     "remotePath": "/var/www/html/anti-fake-system",
-    "host": "8.138.244.31",
+    "host": "your_host",
     "username": "your_username",
     "password": "your_password",
     "port": 21,
@@ -110,7 +110,7 @@
 ```json
 {
     "type": "sftp",
-    "host": "8.138.244.31",
+    "host": "your_host",
     "user": "your_username",
     "password": "your_password",
     "port": "22",
@@ -139,7 +139,7 @@
 ### FileZilla (免费)
 1. 下载安装 FileZilla
 2. 站点管理器配置：
-   - 主机: 8.138.244.31
+   - 主机: your_host
    - 端口: 21 (FTP) 或 22 (SFTP)
    - 协议: FTP 或 SFTP
    - 用户名和密码
@@ -148,7 +148,7 @@
 1. 下载安装 WinSCP
 2. 新建会话：
    - 文件协议: SFTP 或 FTP
-   - 主机名: 8.138.244.31
+   - 主机名: your_host
    - 端口: 22 或 21
    - 用户名和密码
 
