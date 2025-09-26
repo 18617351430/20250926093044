@@ -53,31 +53,68 @@ npm run dev
 
 ### 2. 后端启动 (需要数据库)
 ```bash
-# 1. 确保MySQL服务运行
-# 2. 创建数据库
+# 1. 配置环境变量
+cd backend
+cp .env.example .env
+# 编辑 .env 文件，设置你的数据库连接信息
+
+# 2. 确保MySQL服务运行
+# 3. 创建数据库
 mysql -u root -p
 CREATE DATABASE anti_fake_system;
 
-# 3. 导入初始数据
-mysql -u root -p anti_fake_system < backend/init_data.sql
+# 4. 导入初始数据
+mysql -u root -p anti_fake_system < init_data.sql
 
-# 4. 启动后端服务
-cd backend
+# 5. 安装Go依赖并启动后端服务
+go mod tidy
 go run main.go
 ```
 
-## 数据库配置
-线上数据库配置:
-- 主机: 8.138.244.31
-- 端口: 3306
-- 用户: fangwei
-- 密码: NMDYyLjF52KS5S6N
-- 数据库: fangwei
+## 环境配置
 
-Redis配置:
-- 主机: 8.138.244.31:6379
-- 密码: 123456
-- DB: 0
+### 环境变量设置
+
+项目使用环境变量来管理敏感配置信息，确保安全性。
+
+#### 根目录环境变量
+1. 复制环境变量模板文件：
+```bash
+cp .env.example .env
+```
+
+2. 编辑根目录的 `.env` 文件，配置你的数据库和Redis连接信息。
+
+#### 后端环境变量
+1. 复制后端环境变量模板文件：
+```bash
+cd backend
+cp .env.example .env
+```
+
+2. 编辑后端的 `.env` 文件，配置具体的连接参数：
+```bash
+# 数据库配置
+DB_HOST=your_database_host
+DB_PORT=3306
+DB_USER=your_database_user
+DB_PASSWORD=your_database_password
+DB_NAME=your_database_name
+
+# Redis配置
+REDIS_ADDR=your_redis_host:6379
+REDIS_PASSWORD=your_redis_password
+REDIS_DB=0
+
+# JWT配置
+JWT_SECRET=your_strong_jwt_secret_key
+JWT_EXPIRE=24
+```
+
+**安全提示**: 
+- `.env` 文件包含敏感信息，已被添加到 `.gitignore` 中，不会被提交到版本控制系统
+- 请使用强密码和复杂的JWT密钥
+- 生产环境中请更改所有默认密码
 
 ## API接口
 - 健康检查: GET /health

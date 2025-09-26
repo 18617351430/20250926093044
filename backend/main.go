@@ -7,9 +7,16 @@ import (
 	"anti-fake-system/database"
 	"anti-fake-system/models"
 	"anti-fake-system/routes"
+
+	"github.com/joho/godotenv"
 )
 
 func main() {
+	// 加载.env文件
+	if err := godotenv.Load(); err != nil {
+		log.Println("未找到.env文件，使用默认配置")
+	}
+
 	// 加载配置
 	cfg := config.Load()
 

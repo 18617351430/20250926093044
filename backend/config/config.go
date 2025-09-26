@@ -43,15 +43,15 @@ func Load() *Config {
 			Mode: getEnv("SERVER_MODE", "debug"),
 		},
 		Database: DatabaseConfig{
-			Host:     getEnv("DB_HOST", "8.138.244.31"),
+			Host:     getEnv("DB_HOST", "localhost"),
 			Port:     getEnv("DB_PORT", "3306"),
-			User:     getEnv("DB_USER", "fangwei"),
-			Password: getEnv("DB_PASSWORD", "NMDYyLjF52KS5S6N"),
-			Name:     getEnv("DB_NAME", "fangwei"),
+			User:     getEnv("DB_USER", "root"),
+			Password: getEnv("DB_PASSWORD", ""),
+			Name:     getEnv("DB_NAME", "anti_fake_system"),
 		},
 		Redis: RedisConfig{
-			Addr:     getEnv("REDIS_ADDR", "8.138.244.31:6379"),
-			Password: getEnv("REDIS_PASSWORD", "123456"),
+			Addr:     getEnv("REDIS_ADDR", "localhost:6379"),
+			Password: getEnv("REDIS_PASSWORD", ""),
 			DB:       getEnvInt("REDIS_DB", 0),
 		},
 		JWT: JWTConfig{
