@@ -3,27 +3,17 @@ package main
 import (
 	"log" // 导入log包，用于日志输出
 
-<<<<<<< HEAD
 	"anti-fake-system/config"   // 导入项目配置包
 	"anti-fake-system/database" // 导入数据库初始化包
 	"anti-fake-system/models"   // 导入数据模型包，用于数据库迁移
 	"anti-fake-system/routes"   // 导入路由设置包
 
 	"github.com/joho/godotenv" // 导入godotenv包，用于加载.env文件
-=======
-	"anti-fake-system/config"
-	"anti-fake-system/database"
-	"anti-fake-system/models"
-	"anti-fake-system/routes"
 
-	"github.com/joho/godotenv"
->>>>>>> ccdb57742d35244c5b94196a200ad37653fe0f0a
-)
 
 // main 函数是Go应用程序的入口点。
 // 它负责初始化配置、数据库、Redis、设置路由并启动HTTP服务器。
 func main() {
-<<<<<<< HEAD
 	// 尝试加载.env文件中的环境变量。
 	// 如果文件不存在或加载失败，则打印警告信息，但程序会继续使用系统环境变量或代码中定义的默认值。
 	if err := godotenv.Load(); err != nil {
@@ -32,14 +22,7 @@ func main() {
 
 	// 加载应用程序配置。
 	// config.Load() 函数会从环境变量中读取配置，如果环境变量不存在，则使用预设的默认值。
-=======
-	// 加载.env文件
-	if err := godotenv.Load(); err != nil {
-		log.Println("未找到.env文件，使用默认配置")
-	}
 
-	// 加载配置
->>>>>>> ccdb57742d35244c5b94196a200ad37653fe0f0a
 	cfg := config.Load()
 
 	// 初始化数据库连接。
