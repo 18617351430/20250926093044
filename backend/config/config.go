@@ -50,7 +50,6 @@ func Load() *Config {
 			Mode: getEnv("SERVER_MODE", "debug"), // 从环境变量SERVER_MODE获取模式，默认debug
 		},
 		Database: DatabaseConfig{
-<<<<<<< HEAD
 			Host:     getEnv("DB_HOST", "localhost"),        // 从环境变量DB_HOST获取数据库主机，默认localhost
 			Port:     getEnv("DB_PORT", "3306"),             // 从环境变量DB_PORT获取数据库端口，默认3306
 			User:     getEnv("DB_USER", "root"),             // 从环境变量DB_USER获取数据库用户，默认root
@@ -61,18 +60,7 @@ func Load() *Config {
 			Addr:     getEnv("REDIS_ADDR", "localhost:6379"), // 从环境变量REDIS_ADDR获取Redis地址，默认localhost:6379
 			Password: getEnv("REDIS_PASSWORD", ""),           // 从环境变量REDIS_PASSWORD获取Redis密码，默认空
 			DB:       getEnvInt("REDIS_DB", 0),               // 从环境变量REDIS_DB获取Redis数据库索引，默认0
-=======
-			Host:     getEnv("DB_HOST", "localhost"),
-			Port:     getEnv("DB_PORT", "3306"),
-			User:     getEnv("DB_USER", "root"),
-			Password: getEnv("DB_PASSWORD", ""),
-			Name:     getEnv("DB_NAME", "anti_fake_system"),
-		},
-		Redis: RedisConfig{
-			Addr:     getEnv("REDIS_ADDR", "localhost:6379"),
-			Password: getEnv("REDIS_PASSWORD", ""),
-			DB:       getEnvInt("REDIS_DB", 0),
->>>>>>> ccdb57742d35244c5b94196a200ad37653fe0f0a
+
 		},
 		JWT: JWTConfig{
 			Secret: getEnv("JWT_SECRET", "anti-fake-system-secret"), // 从环境变量JWT_SECRET获取JWT密钥，默认"anti-fake-system-secret"
